@@ -24,7 +24,8 @@ To use the get_next_line function in a program, it includes the get_next_line.h 
 
 ### Links to my other projects at 42:
 
-- **[Main Page](/README.md)**
-- **[libft](/libft)**
-- **[ft_printf](/ft_printf)**
-- **[pipex](/pipex)**
+- **[Main Page](../../../Clocon)**
+- **[libft](../../../libft-42)**
+- **[ft_printf](../../../ft_printf-42)**
+- **[pipex](../../../pipex-42)**
+- **[push_swap](../../../push_swap-42)**
