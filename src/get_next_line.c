@@ -6,12 +6,28 @@
 /*   By: lumorale <lumorale@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 12:34:20 by lumorale          #+#    #+#             */
-/*   Updated: 2023/01/16 15:30:50 by lumorale         ###   ########.fr       */
+/*   Updated: 2023/03/20 17:00:29 by lumorale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-//#define BUFFER_SIZE 42
+#include "../includes/get_next_line.h"
+
+static char	*ft_strjoin_free(char *s1, char *s2, int n)
+{
+	char	*str;
+	int		s1len;
+
+	s1len = ft_strlen(s1);
+	str = malloc(sizeof(char) * (s1len + n + 1));
+	if (!str)
+		return (0);
+	ft_memcpy(str, s1, s1len);
+	ft_memcpy(&str[s1len], s2, n);
+	str[s1len + n] = 0;
+	free(s1);
+	return (str);
+}
+
 
 char	*ft_next_line(char *str)
 {
@@ -72,7 +88,7 @@ char	*ft_read_file(int fd, char *str)
 		readed = read(fd, buffer, BUFFER_SIZE);
 		if (readed <= 0)
 			break ;
-		str = ft_strjoin(str, buffer, readed);
+		str = ft_strjoin_free(str, buffer, readed);
 		if (ft_strchr(buffer, '\n'))
 			break ;
 	}
