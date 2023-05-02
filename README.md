@@ -30,3 +30,4 @@ To use the get_next_line function in a program, it includes the get_next_line.h 
 - **[pipex](../../../pipex-42)**
 - **[push_swap](../../../push_swap-42)**
 - **[so_long](../../../so_long-42)**
+- **[philosophers](../../../philosophers-42)**
